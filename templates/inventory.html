@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="heading">INVENTORY</div>
+        <div class="menu-row">
+            <div class="command">Category</div>
+            <div class="command">Sub-Category</div>
+            <div class="command">Item</div>
+            <div class="command">Count</div>
+        </div>
+        <div class="row">
+            <input type="text" class="command" placeholder="Enter category">
+            <input type="text" class="command" placeholder="Enter sub-category">
+            <input type="text" class="command" placeholder="Enter item">
+            <input type="number" class="command" placeholder="Enter count">
+        </div>
+        <button class="add-row-btn" onclick="addRow()">Add Row</button>
+        <button class="save-btn" onclick="saveInventory()">Save</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
