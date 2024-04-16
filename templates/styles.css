@@ -1,0 +1,350 @@
+/* homepage.css */
+body,
+.inventory.css,
+.invoice.css,
+.landingpage.css,
+.login.css,
+.signup.css,
+.reports.css {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+/* homepage.css */
+.container,
+.container,
+.container,
+.container,
+.container,
+.container,
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+/* homepage.css */
+.box,
+.heading,
+.menu-row,
+.menu-row,
+.command,
+.row,
+.row,
+.add-row-btn,
+.save-btn {
+    background-color: white;
+}
+
+/* homepage.css */
+.box,
+.box,
+.menu-row,
+.command,
+.add-row-btn,
+.save-btn {
+    margin-bottom: 20px;
+}
+
+/* homepage.css */
+.box,
+.box,
+.heading {
+    border-radius: 10px;
+}
+
+/* homepage.css */
+.box {
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* homepage.css */
+.box-header {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* homepage.css */
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+/* homepage.css */
+th,
+td,
+.command input,
+.row input {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+/* homepage.css */
+.add-item-btn,
+.add-row-btn,
+.save-btn,
+.buttons button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* homepage.css */
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* landingpage.css */
+body {
+    background-image: url(https://i.ibb.co/VLYzjqg/Designer-1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* landingpage.css */
+.dashboard {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+/* landingpage.css */
+.dashboard a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    transition: background-color 0.3s;
+    margin: 0;
+}
+
+/* landingpage.css */
+.dashboard a:hover {
+    background-color: #ddd;
+}
+
+/* landingpage.css */
+.container {
+    text-align: center;
+    color: #FFD700;
+    margin-top: 20px;
+}
+
+/* landingpage.css */
+h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* landingpage.css */
+h2 {
+    color: orange;
+}
+
+/* landingpage.css */
+.buttons {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* landingpage.css */
+button {
+    padding: 10px 20px;
+    background-color: white;
+    color: #333;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+/* landingpage.css */
+button:hover {
+    background-color: #f2f2f2;
+}
+
+/* landingpage.css */
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    width: 150px;
+    height: auto;
+}
+
+/* login.css */
+.container,
+.container,
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* login.css */
+.logo {
+    margin-bottom: 20px;
+}
+
+/* login.css */
+h2 {
+    margin-bottom: 20px;
+}
+
+/* login.css */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* login.css */
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* signup.css */
+.container,
+.container,
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* signup.css */
+.logo {
+    margin-bottom: 20px;
+}
+
+/* signup.css */
+h2 {
+    margin-bottom: 20px;
+}
+
+/* signup.css */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* signup.css */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* reports.css */
+.container,
+.container,
+.heading,
+.menu-row,
+.menu-row,
+.command,
+.row,
+.row,
+.add-row-btn,
+.save-btn {
+    margin-bottom: 20px;
+}
+
+/* reports.css */
+.container,
+.container,
+.heading {
+    margin: 50px auto;
+}
+
+/* reports.css */
+.menu-row,
+.menu-row {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* reports.css */
+.menu-row,
+.menu-row {
+    margin-bottom: 10px;
+}
+
+/* reports.css */
+.command input,
+.row input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* reports.css */
+.add-row-btn,
+.save-btn,
+.buttons button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* reports.css */
+.save-btn,
+.buttons button {
+    width: 100px;
+}
+
+/* reports.css */
+.add-row-btn {
+    width: 200px;
+}
+
+/* reports.css */
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
