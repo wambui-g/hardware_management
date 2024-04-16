@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVOICE</title>
+    <link rel="stylesheet" href="{% static 'invoice.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">INVOICE</h1>
+        <div class="menu-row">
+            <div class="menu-item">INVOICE NUMBER</div>
+            <div class="menu-item">SUB-CATEGORY</div>
+            <div class="menu-item">ITEM</div>
+            <div class="menu-item">FULFILMENT</div>
+            <div class="menu-item">DATE</div>
+        </div>
+        <div class="form-rows"></div>
+        <div class="buttons">
+            <button id="addRowBtn">Add Row</button>
+            <button id="saveBtn">Save</button>
+        </div>
+    </div>
+    <script src="{% static 'invoice.js' %}"></script>
+</body>
+</html>

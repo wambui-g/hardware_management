@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Management</title>
+    <link rel="stylesheet" href="{% static 'landingpage.css' %}">
+</head>
+<body>
+    <div class="dashboard">
+        <a href="{% url 'homepage' %}">Home</a>
+        <a href="{% url 'inventory' %}">Inventory</a>
+        <a href="{% url 'invoice' %}">Invoice</a>
+        <a href="{% url 'reports' %}">Reports</a>
+    </div>
+    <img src="https://i.ibb.co/W0gCbHb/Hardwaremanagementapp-Logoby-Designer.png" alt="Logo" class="logo">
+    <div class="container">
+        <h1>Hardware Management</h1>
+        <h2>Streamline Your Hardware Management Effortlessly with Our App - Never Lose Track Again!</h2> <!-- Added caption -->
+        <div class="buttons">
+            <a href="{% url 'login' %}"><button id="loginBtn">Log In</button></a>
+        </div>
+        <div class="buttons">
+            <a href="{% url 'signup' %}"><button id="signupBtn">Sign Up</button></a>
+        </div>
+    </div>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
+

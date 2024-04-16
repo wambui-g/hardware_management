@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Page</title>
+    <link rel="stylesheet" href="{% static 'reports.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">REPORTS</h1>
+        <div class="menu-row">
+            <div class="command">SALES REPORTS</div>
+            <div class="command">MONTHLY</div>
+            <div class="command">QUARTERLY</div>
+            <div class="command">ANNUALLY</div>
+        </div>
+        <div class="form-rows"></div>
+        <button class="add-row-btn" onclick="addRow()">Add Row</button>
+        <button class="save-btn" onclick="saveReports()">Save</button>
+    </div>
+
+    <script src="{% static 'reports.js' %}"></script>
+</body>
+</html>
+

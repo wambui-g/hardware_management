@@ -1,11 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-
-    {% load static %}
     <link rel="stylesheet" href="{% static 'homepage.css' %}">
 </head>
 <body>
@@ -72,6 +71,6 @@
         </div>
     </div>
 
-    <script src="% static 'homepage.js' %"></script>
+    <script src="{% static 'homepage.js' %}"></script>
 </body>
 </html>
