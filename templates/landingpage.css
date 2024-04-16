@@ -1,0 +1,82 @@
+body {
+    background-image: url(https://i.ibb.co/VLYzjqg/Designer-1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    padding: 10px 0;
+    overflow-x: auto;
+    gap: 10px; /* Added gap between buttons */
+}
+
+.dashboard a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    transition: background-color 0.3s;
+    margin: 0;
+}
+
+.dashboard a:hover {
+    background-color: #ddd;
+}
+
+.container {
+    text-align: center;
+    color: #FFD700; /* Mustard color */
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+    color: white; /* White color for heading */
+}
+
+h2 {
+    color: orange; /* White color for caption */
+}
+
+.buttons {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: white;
+    color: #333;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f2f2f2; /* Light gray on hover */
+}
+
+.logo {
+    position: absolute;
+    top: 30px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    width: 150px; /* Adjust the width */
+    height: auto; /* Maintain aspect ratio */
+}
+
