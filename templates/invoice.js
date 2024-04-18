@@ -1,42 +1,31 @@
-// Function to add a new form row for entering invoice information
-function addInvoiceRow() {
-    var formRow = document.createElement('div');
-    formRow.className = 'form-row';
-    formRow.innerHTML = `
-        <div class="form-item">
-            <input type="text" placeholder="Enter invoice number">
-        </div>
-        <div class="form-item">
-            <input type="text" placeholder="Enter sub-category">
-        </div>
-        <div class="form-item">
-            <input type="text" placeholder="Enter item">
-        </div>
-        <div class="form-item">
-            <input type="text" placeholder="Enter fulfilment">
-        </div>
-        <div class="form-item">
-            <input type="date">
-        </div>
-    `;
-    document.querySelector('.form-rows').appendChild(formRow);
+function showPopupForm() {
+    document.getElementById("popupForm").style.display = "block";
 }
 
-// Function to save the entered invoice information
-function saveInvoice() {
-    var inputs = document.querySelectorAll('.form-item input');
-    var invoiceData = {};
-    inputs.forEach(function(input, index) {
-        var key = input.placeholder.split(' ').join('_').toLowerCase();
-        var value = input.value;
-        invoiceData[key] = value;
-    });
-    console.log(invoiceData);
+function hidePopupForm() {
+    document.getElementById("popupForm").style.display = "none";
 }
 
-// Event listener for Add Row button
-document.getElementById('addRowBtn').addEventListener('click', addInvoiceRow);
+function addItem() {
+    var invoicenumber = document.getElementById("invoicenumberInput").value;
+    var subCategory = document.getElementById("subCategoryInput").value;
+    var item = document.getElementById("itemInput").value;
+    var fulfilment = document.getElementById("fulfilmentInput").value;
+    var date = document.getElementById("dateInput").value;
 
-// Event listener for Save button
-document.getElementById('saveBtn').addEventListener('click', saveInvoice);
+    var newRow = document.createElement("div");
+    newRow.classList.add("added-item-row");
+
+    var inputs = [invoicenumber, subCategory, item, fulfilment, date];
+    for (var i = 0; i < inputs.length; i++) {
+        var input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.classList.add("command");
+        input.value = inputs[i];
+        newRow.appendChild(input);
+    }
+
+    document.querySelector(".menu-row").insertAdjacentElement("afterend", newRow);
+    hidePopupForm();
+}
 

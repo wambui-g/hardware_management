@@ -15,16 +15,19 @@
             <div class="command">Item</div>
             <div class="command">Count</div>
         </div>
-        <div class="row">
-            <input type="text" class="command" placeholder="Enter category">
-            <input type="text" class="command" placeholder="Enter sub-category">
-            <input type="text" class="command" placeholder="Enter item">
-            <input type="number" class="command" placeholder="Enter count">
-        </div>
-        <button class="add-row-btn" onclick="addRow()">Add Row</button>
-        <button class="save-btn" onclick="saveInventory()">Save</button>
+        <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
+    </div>
+
+    <div class="popup-form" id="popupForm">
+        <h2>Add Item</h2>
+        <input type="text" id="categoryInput" placeholder="Category">
+        <input type="text" id="subCategoryInput" placeholder="Sub-Category">
+        <input type="text" id="itemInput" placeholder="Item">
+        <input type="number" id="countInput" placeholder="Count">
+        <button onclick="addItem()">Save</button>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+

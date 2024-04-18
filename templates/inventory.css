@@ -4,15 +4,18 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .container {
     width: 80%;
     margin: 50px auto;
 }
+
 .heading {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
 }
+
 .menu-row {
     display: flex;
     background-color: #3498db;
@@ -21,26 +24,19 @@ body {
     border-radius: 5px;
     margin-bottom: 20px;
 }
+
 .command {
     flex: 1;
     text-align: center;
 }
+
 .command input {
-    width: 80%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.row {
-    display: flex;
-    margin-bottom: 10px;
-}
-.row input {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+
 .add-row-btn {
     display: block;
     width: 200px;
@@ -52,13 +48,53 @@ body {
     cursor: pointer;
     margin-bottom: 20px;
 }
-.save-btn {
-    display: block;
-    width: 100px;
+
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.popup-form input {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
     padding: 10px;
-    background-color: #f39c12;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: block;
+    margin: 10px auto;
+}
+
+.popup-form button {
+    width: calc(100% - 20px);
+    padding: 10px 20px;
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    margin: 10px auto;
 }
+
+.added-item-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.added-item-row input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
