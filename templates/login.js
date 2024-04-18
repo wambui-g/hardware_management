@@ -6,5 +6,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     // Replace this with your actual login logic
     console.log('Email:', email);
     console.log('Password:', password);
+
+    // Redirect to the inventory page after successful login
+    window.location.href = "inventory.html";
 });
 
