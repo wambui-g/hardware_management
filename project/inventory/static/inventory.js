@@ -15,6 +15,5 @@ function addRow() {
 }
 
 function saveInventory() {
-    // Add your save functionality here
-    alert("Inventory saved!");
+
 }

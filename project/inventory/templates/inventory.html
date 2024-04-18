@@ -16,12 +16,23 @@
             <div class="command">Item</div>
             <div class="command">Count</div>
         </div>
+
+        {% for item in items %}
         <div class="row">
-            <input type="text" class="command" placeholder="Enter category">
-            <input type="text" class="command" placeholder="Enter sub-category">
-            <input type="text" class="command" placeholder="Enter item">
-            <input type="number" class="command" placeholder="Enter count">
+            <div class="command">{{ item.subcategory.category }}</div>
+            <div class="command">{{ item.subcategory }}</div>
+            <div class="command">{{ item.name }}</div>
+            <div class="command">{{ item.count }}</div>
         </div>
+        {% endfor %}
+
+        <div class="row">
+            <input type="text" id="category" class="command" placeholder="Enter category">
+            <input type="text" id="subcategory" class="command" placeholder="Enter sub-category">
+            <input type="text" id="item" class="command" placeholder="Enter item">
+            <input type="number" id="number" class="command" placeholder="Enter count">
+        </div>
+
         <button class="add-row-btn" onclick="addRow()">Add Row</button>
         <button class="save-btn" onclick="saveInventory()">Save</button>
     </div>
