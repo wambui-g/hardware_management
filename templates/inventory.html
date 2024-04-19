@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form id="inventoryForm">
-        <div class="container">
-            <div class="heading">INVENTORY</div>
-            <div class="menu-row">
-                <div class="command">Category</div>
-                <div class="command">Sub-Category</div>
-                <div class="command">Item</div>
-                <div class="command">Count</div>
-            </div>
-            <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
+    <div class="container">
+        <div class="heading">INVENTORY</div>
+        <div class="menu-row">
+            <div class="command">Category</div>
+            <div class="command">Sub-Category</div>
+            <div class="command">Item</div>
+            <div class="command">Count</div>
         </div>
+        <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
+    </div>
 
+    <form id="inventoryForm">
         <div class="popup-form" id="popupForm">
             <h2>Add Item</h2>
             <input type="text" id="categoryInput" placeholder="Category">

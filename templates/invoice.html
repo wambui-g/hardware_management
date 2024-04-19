@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form id="invoiceForm">
-        <div class="container">
-            <div class="heading">INVOICE</div>
-            <div class="menu-row">
-                <div class="command">INVOICE NUMBER</div>
-                <div class="command">SUB-CATEGORY</div>
-                <div class="command">ITEM</div>
-                <div class="command">FULFILMENT</div>
-                <div class="command">DATE</div>
-            </div>
-            <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
+    <div class="container">
+        <div class="heading">INVOICE</div>
+        <div class="menu-row">
+            <div class="command">INVOICE NUMBER</div>
+            <div class="command">SUB-CATEGORY</div>
+            <div class="command">ITEM</div>
+            <div class="command">FULFILMENT</div>
+            <div class="command">DATE</div>
         </div>
+        <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
+    </div>
 
-        <div class="popup-form" id="popupForm">
+    <form id="popupForm">
+        <div class="popup-form">
             <h2>Add Item</h2>
             <input type="text" id="invoicenumberInput" placeholder="Invoice Number">
             <input type="text" id="subCategoryInput" placeholder="Sub-Category">
