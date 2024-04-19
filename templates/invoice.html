@@ -7,27 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="heading">INVOICE</div>
-        <div class="menu-row">
-            <div class="command">INVOICE NUMBER</div>
-            <div class="command">SUB-CATEGORY</div>
-            <div class="command">ITEM</div>
-            <div class="command">FULFILMENT</div>
-            <div class="command">DATE</div>
+    <form id="invoiceForm">
+        <div class="container">
+            <div class="heading">INVOICE</div>
+            <div class="menu-row">
+                <div class="command">INVOICE NUMBER</div>
+                <div class="command">SUB-CATEGORY</div>
+                <div class="command">ITEM</div>
+                <div class="command">FULFILMENT</div>
+                <div class="command">DATE</div>
+            </div>
+            <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
         </div>
-        <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
-    </div>
 
-    <div class="popup-form" id="popupForm">
-        <h2>Add Item</h2>
-        <input type="text" id="invoicenumberInput" placeholder="Invoice Number">
-        <input type="text" id="subCategoryInput" placeholder="Sub-Category">
-        <input type="text" id="itemInput" placeholder="Item">
-        <input type="text" id="fulfilmentInput" placeholder="Fulfilment">
-        <input type="date" id="dateInput" placeholder="Date">
-        <button onclick="addItem()">Save</button>
-    </div>
+        <div class="popup-form" id="popupForm">
+            <h2>Add Item</h2>
+            <input type="text" id="invoicenumberInput" placeholder="Invoice Number">
+            <input type="text" id="subCategoryInput" placeholder="Sub-Category">
+            <input type="text" id="itemInput" placeholder="Item">
+            <input type="text" id="fulfilmentInput" placeholder="Fulfilment">
+            <input type="date" id="dateInput" placeholder="Date">
+            <button onclick="addItem()">Save</button>
+        </div>
+    </form>
 
     <script src="script.js"></script>
 </body>

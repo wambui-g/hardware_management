@@ -7,25 +7,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="heading">INVENTORY</div>
-        <div class="menu-row">
-            <div class="command">Category</div>
-            <div class="command">Sub-Category</div>
-            <div class="command">Item</div>
-            <div class="command">Count</div>
+    <form id="inventoryForm">
+        <div class="container">
+            <div class="heading">INVENTORY</div>
+            <div class="menu-row">
+                <div class="command">Category</div>
+                <div class="command">Sub-Category</div>
+                <div class="command">Item</div>
+                <div class="command">Count</div>
+            </div>
+            <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
         </div>
-        <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
-    </div>
 
-    <div class="popup-form" id="popupForm">
-        <h2>Add Item</h2>
-        <input type="text" id="categoryInput" placeholder="Category">
-        <input type="text" id="subCategoryInput" placeholder="Sub-Category">
-        <input type="text" id="itemInput" placeholder="Item">
-        <input type="number" id="countInput" placeholder="Count">
-        <button onclick="addItem()">Save</button>
-    </div>
+        <div class="popup-form" id="popupForm">
+            <h2>Add Item</h2>
+            <input type="text" id="categoryInput" placeholder="Category">
+            <input type="text" id="subCategoryInput" placeholder="Sub-Category">
+            <input type="text" id="itemInput" placeholder="Item">
+            <input type="number" id="countInput" placeholder="Count">
+            <button onclick="addItem()">Save</button>
+        </div>
+    </form>
 
     <script src="script.js"></script>
 </body>
