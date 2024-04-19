@@ -12,51 +12,88 @@ body {
 
 .heading {
     font-size: 24px;
+    font-weight: bold;
     margin-bottom: 20px;
-    color: #333;
 }
 
 .menu-row {
     display: flex;
-    align-items: center;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-.menu-item {
+.command {
     flex: 1;
     text-align: center;
 }
 
-.form-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.command input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.form-item {
-    flex: 1;
-    margin-right: 10px;
-}
-
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.buttons button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+.add-row-btn {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    margin-bottom: 20px;
 }
 
-.buttons button:hover {
-    background-color: #0056b3;
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.popup-form input {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: block;
+    margin: 10px auto;
+}
+
+.popup-form button {
+    width: calc(100% - 20px);
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    margin: 10px auto;
+}
+
+.added-item-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.added-item-row input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }

@@ -25,17 +25,20 @@
             <div class="command">{{ item.count }}</div>
         </div>
         {% endfor %}
-
-        <div class="row">
-            <input type="text" id="category" class="command" placeholder="Enter category">
-            <input type="text" id="subcategory" class="command" placeholder="Enter sub-category">
-            <input type="text" id="item" class="command" placeholder="Enter item">
-            <input type="number" id="number" class="command" placeholder="Enter count">
-        </div>
-
-        <button class="add-row-btn" onclick="addRow()">Add Row</button>
-        <button class="save-btn" onclick="saveInventory()">Save</button>
+        <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
     </div>
+
+    <form id="inventoryForm">
+        <div class="popup-form" id="popupForm">
+            <h2>Add Item</h2>
+            <input type="text" id="categoryInput" placeholder="Category">
+            <input type="text" id="subCategoryInput" placeholder="Sub-Category">
+            <input type="text" id="itemInput" placeholder="Item">
+            <input type="number" id="countInput" placeholder="Count">
+            <button onclick="addItem()">Save</button>
+        </div>
+    </form>
+
 
     <script src="{% static 'inventory.js' %}"></script>
 </body>

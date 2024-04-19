@@ -11,18 +11,51 @@
     <div class="container">
         <h1 class="heading">INVOICE</h1>
         <div class="menu-row">
-            <div class="menu-item">INVOICE NUMBER</div>
-            <div class="menu-item">SUB-CATEGORY</div>
-            <div class="menu-item">ITEM</div>
-            <div class="menu-item">FULFILMENT</div>
-            <div class="menu-item">DATE</div>
+            <div class="command">INVOICE NUMBER</div>
+            <div class="command">SUB-CATEGORY</div>
+            <div class="command">ITEM</div>
+            <div class="command">PRICE</div>
+            <div class="command">COUNT</div>
+            <div class="command">INVOICED AMOUNT</div>
+            <div class="command">FULFILLMENT</div>
+            <div class="command">DATE</div>
         </div>
         <div class="form-rows"></div>
-        <div class="buttons">
-            <button id="addRowBtn">Add Row</button>
-            <button id="saveBtn">Save</button>
+        {% for invoice in invoices %}
+        <div class="form-row">
+            <div class="form-item">{{ invoice.invoice_number }}</div>
+            <div class="form-item">{{ invoice.subcategory }}</div>
+            <div class="form-item">{{ invoice.item }}</div>
+            <div class="form-item">{{ invoice.price }}</div>
+            <div class="form-item">{{ invoice.count }}</div>
+            <div class="form-item">{{ invoice.invoiced_amount }}</div>
+            <div class="form-item">{{ invoice.fulfillment }}</div>
+            <!--
+            <div class="form-item">
+                <select name="fulfillment">
+                    <option value="PAID" {% if invoice.fulfillment == 'PAID' %} selected {% endif %}>PAID</option>
+                    <option value="UNPAID" {% if invoice.fulfillment == 'UNPAID' %} selected {% endif %}>UNPAID</option>
+                </select>
+            </div>
+        -->
+            <div class="form-item">{{ invoice.date }}</div>
         </div>
+        {% endfor %}
+        <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
     </div>
+
+    <form id="popupForm">
+        <div class="popup-form">
+            <h2>Add Item</h2>
+            <input type="text" id="invoicenumberInput" placeholder="Invoice Number">
+            <input type="text" id="subCategoryInput" placeholder="Sub-Category">
+            <input type="text" id="itemInput" placeholder="Item">
+            <input type="text" id="fulfilmentInput" placeholder="Fulfilment">
+            <input type="date" id="dateInput" placeholder="Date">
+            <button onclick="addItem()">Save</button>
+        </div>
+    </form>
+
     <script src="{% static 'invoice.js' %}"></script>
 </body>
 </html>
