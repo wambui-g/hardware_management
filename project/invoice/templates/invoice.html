@@ -1,15 +1,14 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INVOICE</title>
-    <link rel="stylesheet" href="{% static 'invoice.css' %}">
+    <title>Invoice Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="heading">INVOICE</h1>
+        <div class="heading">INVOICE</div>
         <div class="menu-row">
             <div class="command">INVOICE NUMBER</div>
             <div class="command">SUB-CATEGORY</div>
@@ -17,45 +16,27 @@
             <div class="command">PRICE</div>
             <div class="command">COUNT</div>
             <div class="command">INVOICED AMOUNT</div>
-            <div class="command">FULFILLMENT</div>
+            <div class="command">FULFILMENT</div>
             <div class="command">DATE</div>
         </div>
-        <div class="form-rows"></div>
-        {% for invoice in invoices %}
-        <div class="form-row">
-            <div class="form-item">{{ invoice.invoice_number }}</div>
-            <div class="form-item">{{ invoice.subcategory }}</div>
-            <div class="form-item">{{ invoice.item }}</div>
-            <div class="form-item">{{ invoice.price }}</div>
-            <div class="form-item">{{ invoice.count }}</div>
-            <div class="form-item">{{ invoice.invoiced_amount }}</div>
-            <div class="form-item">{{ invoice.fulfillment }}</div>
-            <!--
-            <div class="form-item">
-                <select name="fulfillment">
-                    <option value="PAID" {% if invoice.fulfillment == 'PAID' %} selected {% endif %}>PAID</option>
-                    <option value="UNPAID" {% if invoice.fulfillment == 'UNPAID' %} selected {% endif %}>UNPAID</option>
-                </select>
-            </div>
-        -->
-            <div class="form-item">{{ invoice.date }}</div>
-        </div>
-        {% endfor %}
         <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
     </div>
 
-    <form id="popupForm">
-        <div class="popup-form">
+    <div class="popup-form" id="popupForm">
+        <form id="itemForm">
             <h2>Add Item</h2>
-            <input type="text" id="invoicenumberInput" placeholder="Invoice Number">
-            <input type="text" id="subCategoryInput" placeholder="Sub-Category">
-            <input type="text" id="itemInput" placeholder="Item">
-            <input type="text" id="fulfilmentInput" placeholder="Fulfilment">
-            <input type="date" id="dateInput" placeholder="Date">
-            <button onclick="addItem()">Save</button>
-        </div>
-    </form>
+            <input type="text" id="invoicenumberInput" name="invoicenumber" placeholder="Invoice Number">
+            <input type="text" id="subCategoryInput" name="subCategory" placeholder="Sub-Category">
+            <input type="text" id="itemInput" name="item" placeholder="Item">
+            <input type="text" id="priceInput" name="price" placeholder="Price">
+            <input type="text" id="countInput" name="count" placeholder="Count">
+            <input type="text" id="invoicedamountInput" name="invoicedAmount" placeholder="Invoiced Amount">
+            <input type="text" id="fulfilmentInput" name="fulfilment" placeholder="Fulfilment">
+            <input type="date" id="dateInput" name="date" placeholder="Date">
+            <button type="submit">Save</button>
+        </form>
+    </div>
 
-    <script src="{% static 'invoice.js' %}"></script>
+    <script src="script.js"></script>
 </body>
 </html>
