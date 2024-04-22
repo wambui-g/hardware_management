@@ -11,7 +11,8 @@
     <div class="container">
         <img src="https://i.ibb.co/W0gCbHb/Hardwaremanagementapp-Logoby-Designer.png" alt="Logo" class="logo">
         <h2>SIGN UP</h2>
-        <form id="signupForm">
+        <form id="signupForm" method="post" action="/signup/">
+            {% csrf_token %}
             <div>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>

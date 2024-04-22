@@ -1,10 +1,11 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'invoice.css' %}">
 </head>
 <body>
     <div class="container">
@@ -19,24 +20,51 @@
             <div class="command">FULFILMENT</div>
             <div class="command">DATE</div>
         </div>
+
+        {% for invoice in invoices %}
+        <div class="row added-item-row ">
+            <div class="command">{{ invoice.invoice_number }}</div>
+            <div class="command">{{ invoice.subcategory }}</div>
+            <div class="command">{{ invoice.item }}</div>
+            <div class="command">{{ invoice.price }}</div>
+            <div class="command">{{ invoice.count }}</div>
+            <div class="command">{{ invoice.invoiced_amount }}</div>
+            <div class="command">{{ invoice.fulfillment }}</div>
+            <div class="command">{{ invoice.date }}</div>
+        </div>
+        {% endfor %}
+
         <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
     </div>
 
     <div class="popup-form" id="popupForm">
-        <form id="itemForm">
+        <form id="itemForm" action="/save_invoice/" method="post">
+            {% csrf_token %}
             <h2>Add Item</h2>
-            <input type="text" id="invoicenumberInput" name="invoicenumber" placeholder="Invoice Number">
-            <input type="text" id="subCategoryInput" name="subCategory" placeholder="Sub-Category">
-            <input type="text" id="itemInput" name="item" placeholder="Item">
-            <input type="text" id="priceInput" name="price" placeholder="Price">
-            <input type="text" id="countInput" name="count" placeholder="Count">
-            <input type="text" id="invoicedamountInput" name="invoicedAmount" placeholder="Invoiced Amount">
-            <input type="text" id="fulfilmentInput" name="fulfilment" placeholder="Fulfilment">
-            <input type="date" id="dateInput" name="date" placeholder="Date">
+            <input type="text" id="invoicenumberInput" name="invoicenumberInput" placeholder="Invoice Number">
+            <select id="subCategoryInput" class="drop" name="subCategoryInput" placeholder="Sub-Category">
+                {% for subcategory in subcategories %}
+                    <option value="{{ subcategory.id }}">{{ subcategory.name }}</option>
+                {% endfor %}
+            </select>
+            
+            <select id="itemInput" class="drop" name="itemInput" placeholder="Item">
+                {% for item in items %}
+                    <option value="{{ item.id }}">{{ item.name }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" id="priceInput" name="priceInput" placeholder="Price">
+            <input type="number" id="countInput" name="countInput" placeholder="Count">
+
+            <select id="fulfillmentInput" class="drop" name="fulfillmentInput" placeholder="Fulfilment">
+                <option value="PAID">PAID</option>
+                <option value="NOT-PAID">NOT-PAID</option>
+            </select>
+            <input type="date" id="dateInput" name="dateInput" placeholder="Date">
             <button type="submit">Save</button>
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script src="{% static 'invoice.js' %}"></script>
 </body>
 </html>

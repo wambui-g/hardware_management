@@ -18,7 +18,7 @@
         </div>
 
         {% for item in items %}
-        <div class="row">
+        <div class="row added-item-row ">
             <div class="command">{{ item.subcategory.category }}</div>
             <div class="command">{{ item.subcategory }}</div>
             <div class="command">{{ item.name }}</div>
@@ -28,14 +28,15 @@
         <button class="add-row-btn" onclick="showPopupForm()">Add Item</button>
     </div>
 
-    <form id="inventoryForm">
+    <form id="inventoryForm" action="/save_inventory/" method="post">
+        {% csrf_token %}
         <div class="popup-form" id="popupForm">
             <h2>Add Item</h2>
-            <input type="text" id="categoryInput" placeholder="Category">
-            <input type="text" id="subCategoryInput" placeholder="Sub-Category">
-            <input type="text" id="itemInput" placeholder="Item">
-            <input type="number" id="countInput" placeholder="Count">
-            <button onclick="addItem()">Save</button>
+            <input type="text" id="categoryInput" name="categoryInput" placeholder="Category">
+            <input type="text" id="subCategoryInput" name="subCategoryInput" placeholder="Sub-Category">
+            <input type="text" id="nameInput" name="nameInput" placeholder="Item">
+            <input type="number" id="countInput" name="countInput" placeholder="Count">
+            <button type="submit">Save</button>
         </div>
     </form>
 
