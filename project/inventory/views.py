@@ -5,7 +5,8 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Category, Subcategory, Item
 import json
 from django.contrib import messages 
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
+from django.contrib.auth import logout
 
 def inventory(request):
     items = Item.objects.all()
@@ -46,3 +47,7 @@ def save_inventory(request):
     # Render a template or return a response as needed
     # For example, you can render a blank page or a confirmation message
     return HttpResponseRedirect('/inventory/')  
+
+def logout_user(request):
+    logout(request)
+    return redirect('login') 
