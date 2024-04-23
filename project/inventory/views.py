@@ -9,10 +9,12 @@ from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth import logout
 
 def inventory(request):
+    categories = Category.objects.all()
+    subcategories = Subcategory.objects.all()
     items = Item.objects.all()
 
     # Pass the items to the template context
-    context = {'items': items}
+    context = {'categories': categories, 'subcategories': subcategories, 'items': items}
 
     # Render the inventory template with the items
     return render(request, 'inventory.html', context)
@@ -21,12 +23,15 @@ def save_inventory(request):
     if request.method == 'POST':
         # Retrieve data from the form
         #category = request.POST.get('categoryInput')
-        subcategory_name = request.POST.get('subCategoryInput')
+        subcategory_id = request.POST.get('subCategoryInput')
         item_name = request.POST.get('nameInput')
-        count = request.POST.get('countInput')
+        count = int(request.POST.get('countInput'))
+
+        # Retrieve the subcategory instance based on the provided item ID
+        subcategory = get_object_or_404(Subcategory, pk=subcategory_id)
 
         # Check if an item with the same name and subcategory already exists
-        existing_item = Item.objects.filter(name=item_name, subcategory__name=subcategory_name).first()
+        existing_item = Item.objects.filter(name=item_name, subcategory__name=subcategory).first()
 
         if existing_item:
             # If an item already exists, increase its count
@@ -34,7 +39,7 @@ def save_inventory(request):
             existing_item.save()
         else:
             # If the item doesn't exist, create a new one
-            subcategory = get_object_or_404(Subcategory, name=subcategory_name)
+            subcategory = get_object_or_404(Subcategory, name=subcategory)
             new_item = Item(subcategory=subcategory, name=item_name, count=count)
             new_item.save()
 

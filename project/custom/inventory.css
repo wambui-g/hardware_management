@@ -65,6 +65,18 @@ body {
     display: block;
     margin: 10px auto;
 }
+
+.drop {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: block;
+    margin: 10px auto;
+}
+
 .popup-form button {
     width: calc(100% - 20px);
     padding: 10px 20px;

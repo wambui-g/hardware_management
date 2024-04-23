@@ -5,6 +5,8 @@ from django.template import loader
 from .models import Invoice
 from inventory.models import Subcategory, Item
 from django.contrib import messages
+from django.contrib.auth import logout
+from django.shortcuts import get_object_or_404, redirect
 
 
 def invoice(request):
@@ -57,3 +59,7 @@ def save_invoice(request):
 
     # Instead of rendering a success template, you can redirect back to the form page with a success message
     return HttpResponseRedirect('/invoice/')
+
+def logout_user(request):
+    logout(request)
+    return redirect('login') 

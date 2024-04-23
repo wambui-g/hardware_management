@@ -51,8 +51,17 @@
         {% csrf_token %}
         <div class="popup-form" id="popupForm">
             <h2>Add Item</h2>
-            <input type="text" id="categoryInput" name="categoryInput" placeholder="Category">
-            <input type="text" id="subCategoryInput" name="subCategoryInput" placeholder="Sub-Category">
+            <select id="categoryInput" class="drop" name="categoryInput" placeholder="Category">
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select>
+            
+            <select id="subCategoryInput" class="drop" name="subCategoryInput" placeholder="Sub-Category">
+                {% for subcategory in subcategories %}
+                    <option value="{{ subcategory.id }}">{{ subcategory.name }}</option>
+                {% endfor %}
+            </select>
             <input type="text" id="nameInput" name="nameInput" placeholder="Item">
             <input type="number" id="countInput" name="countInput" placeholder="Count">
             <button type="submit">Save</button>

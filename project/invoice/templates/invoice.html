@@ -6,8 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice Page</title>
     <link rel="stylesheet" href="{% static 'invoice.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
 </head>
 <body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="{% url 'landingpage' %}">Home</a>
+            <!-- Add more links as needed -->
+        </div>
+        <div class="nav-right">
+            {% if user.is_authenticated %}
+                <div class="user-dropdown">
+                    <button class="dropbtn">{{ user.username }}</button>
+                    <a href="{% url 'logout' %}">
+                        <button class="dropbtn">Log Out</button>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
     <div class="container">
         <div class="heading">INVOICE</div>
         <div class="menu-row">
